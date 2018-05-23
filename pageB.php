@@ -9,7 +9,7 @@ $articles = $db->query('select * from content where categorie="A découvrir" ord
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Catégorie A</title>
+    <title>Catégorie B</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />    
     <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">

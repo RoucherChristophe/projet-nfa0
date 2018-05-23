@@ -1,6 +1,6 @@
 <div class="menu">
         <div id="admin">
-        <a href="admin.php">
+        <a href="connexion.php">
         <button class ="bouton">Admin</button>  
         </a>
         </div>
