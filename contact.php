@@ -4,20 +4,17 @@ ini_set("display_errors",0);error_reporting(0);
 
 include 'include/database.php';
 
-if(isset($_GET['sujet_message'], $_GET['nom_prenom'], $_GET['tel'], $_GET['mail'], $_GET['message'])) {
-    if(!empty($_GET['sujet_message']) and !empty($_GET['nom_prenom']) and  !empty($_GET['tel']) and !empty($_GET['mail']) and !empty($_GET['message'])) {
+if(isset($_POST['sujet_message'], $_POST['nom_prenom'], $_POST['tel'], $_POST['mail'], $_POST['message'])) {
+    if(!empty($_POST['sujet_message']) and !empty($_POST['nom_prenom']) and  !empty($_POST['tel']) and !empty($_POST['mail']) and !empty($_POST['message'])) {
 
-        $sujet_message = htmlspecialchars($_GET['sujet_message']);
-        $nom_prenom = htmlspecialchars($_GET['nom_prenom']);
-        $tel = htmlspecialchars($_GET['tel']);
-        $mail = htmlspecialchars($_GET['mail']);
-        $message = htmlspecialchars($_GET['message']);
+        $sujet_message = htmlspecialchars($_POST['sujet_message']);
+        $nom_prenom = htmlspecialchars($_POST['nom_prenom']);
+        $tel = htmlspecialchars($_POST['tel']);
+        $mail = htmlspecialchars($_POST['mail']);
+        $message = htmlspecialchars($_POST['message']);
 
-        $ins_mail = $db->prepare('insert into message (sujet_message, nom_prenom, tel, mail, message, date_envoi)
-        values (?, ?, ?, ?, ?, now())');
-        $ins_mail->execute(array($sujet_message, $nom_prenom, $tel, $mail, $message));
-
-        header('Location: mail_envoye.php');
+       
+        header('Location: reception.php');
 
     } else {
         $erreur = 'Veuillez remplir tous les champs';
@@ -63,7 +60,7 @@ if(isset($_GET['sujet_message'], $_GET['nom_prenom'], $_GET['tel'], $_GET['mail'
     
     <div id = "formulaire">
         <p>Remplir le formulaire pour vous mettre en relation avec nous.</p> <br>
-            <form method="GET" action= "">
+            <form method="POST" action= "reception.php">
                     
                     <fieldset>
                         <legend>&nbsp Sujet du message &nbsp</legend>
