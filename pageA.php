@@ -9,7 +9,7 @@ $articles = $db->query('select * from content where categorie="Les plus visités
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Catégorie A</title>
+    <title>Les plus visités</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />    
     <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
@@ -36,8 +36,8 @@ $articles = $db->query('select * from content where categorie="Les plus visités
 
     <div class="container">
 
-        <h1>Catégorie A</h1><br>
-        <h2>Les plus visités</h2><br>
+        <h1>Les châteaux les plus visités</h1><br>
+        <h2>Principaux châteaux royaux</h2><br>
         <div class="article_titre">
             <?php while($a = $articles->fetch()) { 
                  ?> <br><a href="articleA.php?id= <?php echo $a['id'] ?> "> <?php echo $a['titre']?> </a><br><br><hr>

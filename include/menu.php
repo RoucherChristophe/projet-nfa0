@@ -13,4 +13,4 @@
             <li><a href="contact.php" title="Nous contacter">Contact</a></li>
         </ul>
     </nav>
-    </div>          
+</div>          

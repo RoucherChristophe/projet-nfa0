@@ -59,7 +59,7 @@ if(isset($_GET['sujet_message'], $_GET['nom_prenom'], $_GET['tel'], $_GET['mail'
 
     <div class="container">
 
-    <h1>Contact</h1><br>
+    <h1>Contactez-nous</h1><br>
     
     <div id = "formulaire">
         <p>Remplir le formulaire pour vous mettre en relation avec nous.</p> <br>
