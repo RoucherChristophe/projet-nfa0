@@ -8,5 +8,5 @@ Disallow: /liste_all_message.php
 Disallow: /liste_articles_modifiables.php
 Disallow: /recup_form_contact.php
 Disallow: /admin.php
-
+Sitemap: http://projet-nfa0.unpetitairdefamille.com/sitemap.xml
 

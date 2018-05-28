@@ -1,6 +1,6 @@
 <footer class="footer">
 <?php
-$requete = $db->query("SELECT nom,login FROM user where id='2' or id='3'");
+$requete = $db->query("SELECT nom,login FROM user where id!='4'");
 ?>
     <div id = "credits">
         <p>Conception:
