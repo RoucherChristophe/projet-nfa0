@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: 
+Disallow: /include/
+Disallow: /divers/
+Disallow: /form_backoffice.php
+Disallow: /login.php
+Disallow: /liste_all_message.php
+Disallow: /liste_articles_modifiables.php
+Disallow: /recup_form_contact.php
+Disallow: /admin.php
+
+
