@@ -12,7 +12,7 @@ $requete = $db->query("SELECT nom,login FROM user where id!='4'");
         }
         ?>
         </p>
-        <a id="mentions" href="#">Mention Légales</a>
+        <a id="mentions" href="mentions_legales.php">Mention Légales</a>
 
     </div>
     <div id ="footer_description">

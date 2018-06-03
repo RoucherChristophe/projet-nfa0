@@ -611,3 +611,11 @@ footer a {
 
 }   
 
+.liens-ml p {
+    width: auto;
+    height: auto;
+    text-align: center;
+    word-wrap : break-word;  /* permet un saut de ligne pour que le texte ne depasse pas de la div */
+    margin-right: 5px;
+    margin-left: 5px;
+}
