@@ -3,7 +3,7 @@
     define('HOST', 'localhost');
     define('DB_NAME' , 'nfa083');
     define('USER' , 'root');
-    define('PASS' , 'root');
+    define('PASS' , '');
 
 
     try{

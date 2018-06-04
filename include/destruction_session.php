@@ -17,6 +17,12 @@ if (ini_get("session.use_cookies")) {
         $params["secure"], $params["httponly"]
     );
 }
+session_unset($_SESSION['count']);
+session_unset($_SESSION['countPA']);
+session_unset($_SESSION['countPB']);
+session_unset($_SESSION['countArtA']);
+session_unset($_SESSION['countArtB']);
+session_unset($_SESSION['countCont']);
 
 // Finalement, on détruit la session.
 session_destroy();

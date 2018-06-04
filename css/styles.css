@@ -97,6 +97,16 @@ nav li a {
     color: darkslategrey;
 }
 
+.bouton {
+    margin-left: -60px;
+    margin-top: 10px;
+}
+
+.log_menu {
+     margin-left: -160px;
+    margin-top: -20px;
+}
+
 h1 {
     text-align: center;
     font-size: 1.7em;
@@ -203,7 +213,7 @@ footer a {
 
 .ident_user {
     /* width: 330px; */
-    height: 180px;
+    /*height: 180px; */
     border: 1px solid;
     border-radius: 5px;
     margin-left: auto;
@@ -254,6 +264,55 @@ footer a {
     text-decoration: none;
     color: black;
 }
+
+#aButton {
+    text-decoration: none;
+    color: black;
+}
+#cookie {
+    width: 100px;
+    height: 20px;
+    float: right;
+    margin-top: -40px;
+}
+
+.containerP {
+ height: 500px;
+    width: 95%; 
+    background-color: rgb(241, 241, 229);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    padding-bottom: 10px;  
+}
+
+.txt_align {
+    text-align: center;
+}
+
+.imgChateau {
+    float: left;
+    margin-left: 50px; 
+}
+
+.souligne {
+  text-decoration: underline;   
+}
+
+li {
+    list-style: none; 
+}
+
+.word-wrap {
+    word-wrap: break-word;
+    max-width: 980px;
+}
+.imgPage {
+margin-left: 100px;    
+}
+
 
 /* mediaquery  */
 
