@@ -1,8 +1,29 @@
 <div class="menu">
-        <div id="admin">
-        <a href="connexion.php">
-        <button class ="bouton">Admin</button>  
-        </a>
+        <div id="admin">     
+        <?php
+            if(isset($_SESSION['login'])) {
+                ?>
+                
+                <div >
+                <a href="include/destruction_session.php">    <button class ="bouton">Déconnexion</button>  </a>
+                <h3 class ="log_menu"><?= $_SESSION['login']; 
+                if (isset($_SESSION['login'])) {
+                    ?>
+                    <br><br>
+                    <a href="form_backoffice.php">retour backoffice</a>
+                    <?php
+                } ?> </h3>
+                
+                </div>
+          
+              <?php
+             } else {
+                ?>               
+               <a href="admin.php"> <button class ="bouton">Connexion</button> </a>
+                <?php
+            }          
+            ?>         
+        
         </div>
    
     <nav class="nav_menu">
@@ -13,4 +34,4 @@
             <li><a href="contact.php" title="Nous contacter">Contact</a></li>
         </ul>
     </nav>
-</div>          
+    </div>            
