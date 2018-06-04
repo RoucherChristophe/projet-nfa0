@@ -13,22 +13,8 @@ ini_set("display_errors",0);error_reporting(0);
 
 include 'include/database.php';
 
-if(isset($_POST['titre'], $_POST['categorie'], $_POST['descriptif'])) {
-    if(!empty($_POST['titre']) and !empty($_POST['descriptif']) and !empty($_POST['categorie'])) {
-    
+$article = $db->query('SELECT * FROM content');
 
-        $titre = htmlspecialchars($_POST['titre']);
-        $descriptif = htmlspecialchars($_POST['descriptif']);
-        $categorie = htmlspecialchars($_POST['categorie']);
-
-
-        $ins_aa = $db->prepare('insert into content (titre, descriptif, categorie) values (?, ?, ?)');
-        $ins_aa->execute(array($titre, $descriptif, $categorie));
-
-    } else {
-        $erreur = 'Veuillez remplir tous les champs';
-    }
-}
 
 ?>
 
@@ -53,38 +39,32 @@ if(isset($_POST['titre'], $_POST['categorie'], $_POST['descriptif'])) {
     <div class="container">
 
         <h1>Gestion du site</h1><br>
-        <p id="login_user"> Bienvenu <?= $_SESSION['login']; ?> </p>
-        <p id="login_user"><a href="include/destruction_session.php"><button class ="bouton">Déconnection</button></a></p>
         
-       
-        <div id="add_article_A">
-            <p>Publication d'article</p><br>
-            <!-- <p id="CA">Les plus visités</p> -->
-            <form method="post" action="">
-                
-                    <label>Type d'article : </label>
-                    <div>
-                        <input type="radio" id="" name="categorie" value="Les plus visités" required >
-                        <label for="">Les plus visités</label>
-                    
-                        <input type="radio" id="" name="categorie" value="A découvrir" required>
-                        <label for="">A découvrir</label>
-                    
-                    </div><br>
-
-                <input type="text" name="titre" placeholder="Titre" id="" required><br><br>
-                <textarea name="descriptif" id="" cols="30" rows="10" placeholder="contenu" required></textarea><br>
-                <input type="submit" value="Publier">
-            </form><br><br>
-            <?php if (!isset($erreur)) {  ?>
-                <script> alert("Article publié") </script>
-            <?php ; } ?>
-        </div>
-           
-        
-
-    </div>
-
+       <br/> 
+       <h2> Que souhaitez-vous faire ?</h2>
+       <br/>
+        <h4><a href="message.php"> Consulter vos messages </a></h4>
+       <br/>
+        <h4><a href="creationArticle.php"> Créer un article </a></h4>
+    <br/>
+    <h4>Modifier ou supprimer un article</h4>
+    <h4>Liste des articles :</h4>
+    <br/>
+   <ul>
+    <?php 
+    while ($a = $article->fetch()) { 
+       ?>
+      <!-- on créer le lien vers les articles en récupérant l'id de la bdd  -->
+       <li class="liBackoff"><?= $a['titre']  ?> | 
+       <a href="articlemodif.php?edit=<?= $a['id'] ?>">Modifier</a> | 
+       <a href="supprimer.php?id=<?= $a['id'] ?>" onclick="return confirm('Etes-vous sûr de vouloir supprimer cet article ?')">Supprimer</a>  
+        </li>  
+    
+       <?php
+                                   }  ?>
+      
+   </ul>    
+</div>
     <!-- footer -->
     <?php include 'include/footer.php' ?>
 
