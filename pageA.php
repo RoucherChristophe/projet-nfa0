@@ -1,6 +1,28 @@
-<?php include 'include/database.php';
+<?php 
 
-$articles = $db->query('select * from content where categorie="Les plus visités" order by id desc');
+$expiration = 365*24*3600; // J'initialise la variable expiration d'1 an
+	setcookie ('msg', 'Bienvenue', time()+$expiration); // Je génère le cookie
+
+session_start();
+
+if (!isset($_SESSION['countPA'])) {
+  $_SESSION['countPA'] = 0;
+} else {
+  $_SESSION['countPA']++;
+}
+
+include 'include/database.php';
+
+$articles = $db->query('select * from content where categorie="Les plus visités" order by id desc LIMIT 0, 5');
+
+$tabId = array();
+$tabTitre = array();
+
+  while ($infos = $articles->fetch()) 
+  {    
+     array_push($tabId, $infos['id']);
+     array_push($tabTitre, $infos['titre']);
+  }           
 
 ?>
 
@@ -34,16 +56,86 @@ $articles = $db->query('select * from content where categorie="Les plus visités
     <?php include 'include/menu.php' ?>
 
 
-    <div class="container">
+     <div class="containerP">
 
-        <h1>Les châteaux les plus visités</h1><br>
-        <h2>Principaux châteaux royaux</h2><br>
+        <br><br><br>
+        
+        <div id="cookie">
+         <h3>
+     <?php                
+            if ($_SESSION['countPA'] == 0) {
+               echo $_COOKIE['msg']; 
+            }   
+        ?>
+       </h3>
+        </div>
+        
+        <h1 class="txt_align, souligne">Les principaux châteaux royaux</h1><br>
+        
+        <div>
+            <p class="txt_align">La vallée de la Loire, connue comme « Le Jardin de la France » a été la résidence favorite des Rois de France durant la Renaissance. Ce sont des édifices pour la plupart bâtis ou fortement remaniés à la renaissance française, à un moment où le pouvoir royal était situé sur les rives du fleuve, de ses affluents où à proximité de ceux-ci (XVe et XVIe siècles). La plupart des châteaux puisent néanmoins leurs origines dans le Moyen Âge dont ils conservent des traits architecturaux importants. La concentration en monuments remarquables dans cette région a justifié le classement du Val de Loire en patrimoine mondial de l'humanité par l'UNESCO.</p>
+            
+        </div>
+        <br>
+        <div class="imgChateau">
+            <img class="imgPage" src="img/amboise.png" alt="Image du chateau d'Aboise'">
+            <img class="imgPage" src="img/Chambord.png" alt="Image du chateau de Chamborg">
+            <img class="imgPage" src="img/Chenonceau.png" alt="Image du chateau de Chenonceau">
+        </div>
+        
         <div class="article_titre">
             <?php while($a = $articles->fetch()) { 
                  ?> <br><a href="articleA.php?id= <?php echo $a['id'] ?> "> <?php echo $a['titre']?> </a><br><br><hr>
            <?php } ?>
         </div>
-   
+        
+   <div>
+        <ul>   
+          <div class="imgChateau">
+            <li> 
+             <a href="articleA.php?id= <?php echo $tabId[0]; ?> "> 
+              <h3 class="txt_align"><?php if (!isset($tabTitre[0])) { echo " ";} else {echo $tabTitre[0];}  ?></h3> <br>   </a>
+            </li>
+            </div>
+               
+                         
+           <div class="imgChateau">
+            <li>  
+             <a href="articleA.php?id= <?php echo $tabId[1]; ?> ">   
+              <h3 class="txt_align"><?php if (!isset($tabTitre[1])) { echo " ";} else {echo $tabTitre[1];}  ?></h3> <br>                       
+                  
+               </a>           
+               </li>
+            </div>
+            
+            <div class="imgChateau">
+            <li>  
+             <a href="articleA.php?id= <?php echo $tabId[2]; ?> "> 
+              <h3 class="txt_align"><?php if (!isset($tabTitre[2])) { echo " ";} else {echo $tabTitre[2];} ?></h3> <br>          
+                  
+                </a> 
+            </li>
+            </div>            
+            
+            <div class="imgChateau">
+            <li>
+             <a href="articleA.php?id= <?php echo $tabId[3]; ?> ">  
+              <h3 class="txt_align"><?php if (!isset($tabTitre[3])) { echo " ";} else {echo $tabTitre[3];} ?></h3> <br>           
+                </a>
+            </li>
+            </div>
+            
+            <div class="imgChateau">
+            <li>
+             <a href="articleA.php?id= <?php echo $tabId[4]; ?> ">  
+              <h3 class="txt_align"><?php if (!isset($tabTitre[4])) { echo " ";} else {echo $tabTitre[4];} ?></h3> <br>           
+                </a>
+            </li>
+            </div>
+            
+        </ul>
+        </div>
+           
 
     </div>
 
