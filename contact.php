@@ -1,4 +1,16 @@
 <?php
+
+$expiration = 365*24*3600; // J'initialise la variable expiration d'1 an
+	setcookie ('msg', 'Bienvenue', time()+$expiration); // Je génère le cookie
+
+session_start();
+
+if (!isset($_SESSION['countCont'])) {
+  $_SESSION['countCont'] = 0;
+} else {
+  $_SESSION['countCont']++;
+}
+
 ini_set("display_errors",0);error_reporting(0);
 
 
@@ -61,9 +73,20 @@ if(isset($_GET['sujet_message'], $_GET['nom_prenom'], $_GET['tel'], $_GET['mail'
 
     <h1>Contactez-nous</h1><br>
     
+    <div id="cookie">
+             <h3>
+              <?php               
+            if ($_SESSION['countCont'] == 0) {
+               echo $_COOKIE['msg']; 
+            }  
+            ?>
+       </h3>
+        </div>
+    
     <div id = "formulaire">
         <p>Remplir le formulaire pour vous mettre en relation avec nous.</p> <br>
-            <form method="GET" action= "">
+           
+            <form method="POST" action= "reception.php">
                     
                     <fieldset>
                         <legend>&nbsp Sujet du message &nbsp</legend>
