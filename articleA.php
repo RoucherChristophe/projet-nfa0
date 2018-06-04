@@ -1,4 +1,16 @@
-<?php include 'include/database.php';
+<?php 
+$expiration = 365*24*3600; // J'initialise la variable expiration d'1 an
+	setcookie ('msg', 'Bienvenue', time()+$expiration); // Je génère le cookie
+
+session_start();
+
+if (!isset($_SESSION['countArtA'])) {
+  $_SESSION['countArtA'] = 0;
+} else {
+  $_SESSION['countArtA']++;
+}
+
+include 'include/database.php';
 
 if(isset($_GET['id']) AND !empty($_GET['id'])) {
     $get_id = htmlspecialchars($_GET['id']);
@@ -40,7 +52,46 @@ if(isset($_GET['id']) AND !empty($_GET['id'])) {
 
     <div class="container">
 
-    <h1>Article A</h1><br><br><hr><br>
+    <h1 class="souligne">Les plus visités</h1><br><br>
+    
+    <div id="cookie">
+             <h3>
+                 <?php               
+            if ($_SESSION['countArtA'] == 0) {
+               echo $_COOKIE['msg']; 
+            }  
+                ?>
+             </h3>
+              
+        </div>
+        <hr><br>
+        
+        
+        <?php
+        if ($titre == 'Le château d\'Amboise') {
+        ?>
+        <img src="img/amboise2.png" alt="Image du chateau d'Amboise'">
+        <?php
+        }     
+    if ($titre == 'Le château de Chambord') {
+        ?>
+        <img src="img/Chambord2.png" alt="Image du chateau de Chamborg">
+        <?php
+    }
+    if ($titre == 'Le château de Chenonceau') {
+        ?>
+        <img src="img/Chenonceau2.png" alt="Image du chateau de Chenonceau">
+        <?php
+    }    
+    if ($titre == 'Le château de Blois') {
+        ?>
+        <img src="img/blois2.png" alt="Image du chateau de Blois">
+        <?php
+    }
+        
+    ?>
+    
+    
     <h2><?php echo $titre ?></h2><br>
     <p><?php echo $descriptif ?></p><br><hr>
     </div>
