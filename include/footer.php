@@ -7,7 +7,7 @@ $requete = $db->query("SELECT nom,login FROM user where id!='4'");
         <?php
         while($resultat = $requete->fetch())
         { ?>
-            <? echo $resultat['login']. " " .$resultat['nom']. " "; ?>
+            <?php echo $resultat['login']. " " .$resultat['nom']. " "; ?>
         <?php
         }
         ?>
