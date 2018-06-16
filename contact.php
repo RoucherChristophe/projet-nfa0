@@ -28,7 +28,7 @@ if(isset($_GET['sujet_message'], $_GET['nom_prenom'], $_GET['tel'], $_GET['mail'
 
 
 <!DOCTYPE html>
-<html>
+<html lang="fr-FR">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

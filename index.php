@@ -1,12 +1,12 @@
 <?php include 'include/database.php' ?>
 <!DOCTYPE html>
-<html>
+<html lang="fr-FR">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Accueil</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <met description="L'expression châteaux de la Loire regroupe sous une même appellation touristique un ensemble de châteaux français situés dans le Val de Loire. Le territoire connu sous le nom de comté de Tours est âprement disputé entre le xe siècle et le xie siècle par la maison féodale blésoise et la maison d'Anjou ; cette guerre sera à l'origine de très nombreux châteaux du val de Loire actuels1. Les châteaux de la Loire ont la particularité d'avoir été, pour la plupart, bâtis ou fortement remaniés à la Renaissance française (XVe-XVIes.), à une époque où la cour des rois de France était installée dans cette région. La notion de châteaux de la Loire revêt principalement une acception touristique, liée à cette exceptionnelle densité de monuments à visiter. Toutefois ils ont la particularité architecturale d'être pour la plupart2 construits en tuffeau turonien ou en brique avec chaînages en tuffeau.">
+    <meta description="L'expression châteaux de la Loire regroupe sous une même appellation touristique un ensemble de châteaux français situés dans le Val de Loire. Le territoire connu sous le nom de comté de Tours est âprement disputé entre le xe siècle et le xie siècle par la maison féodale blésoise et la maison d'Anjou ; cette guerre sera à l'origine de très nombreux châteaux du val de Loire actuels1. Les châteaux de la Loire ont la particularité d'avoir été, pour la plupart, bâtis ou fortement remaniés à la Renaissance française (XVe-XVIes.), à une époque où la cour des rois de France était installée dans cette région. La notion de châteaux de la Loire revêt principalement une acception touristique, liée à cette exceptionnelle densité de monuments à visiter. Toutefois ils ont la particularité architecturale d'être pour la plupart2 construits en tuffeau turonien ou en brique avec chaînages en tuffeau.">
     <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />    
     <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
 

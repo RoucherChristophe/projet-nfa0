@@ -21,11 +21,11 @@ if(isset($_GET['id']) AND !empty($_GET['id'])) {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr-FR">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Article B</title>
+    <title>Les châteaux à découvrir</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />    
     <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
@@ -40,7 +40,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])) {
 
     <div class="container">
 
-    <h1>Article B</h1><br><br><hr><br>
+    <h1>Les châteaux à découvrir</h1><br><br><hr><br>
     <h2><?php echo $titre ?></h2><br>
     <p><?php echo $descriptif ?></p><br><hr>
     </div>
